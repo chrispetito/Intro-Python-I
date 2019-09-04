@@ -20,8 +20,11 @@ class Waypoint(LatLon):
         super().__init__(lat, lon)
         self.name = name
 
+    def __str__(self):
+        return f'Waypoint: {self.name}'
+
     def __repr__(self):
-        return f'Waypoint({repr(self.name), repr(self.lat), repr(self.lon)})'
+        return f'Waypoint{repr(self.name), repr(self.lat), repr(self.lon)}'
 
 
 # Make a class Geocache that can be passed parameters `name`, `difficulty`,
@@ -43,6 +46,7 @@ waypoint = Waypoint( "Catacombs", 41.70505, -121.51521)
 # Without changing the following line, how can you make it print into something
 # more human-readable? Hint: Look up the `object.__str__` method
 print(waypoint)
+print(repr(waypoint))
 
 # Make a new geocache "Newberry Views", diff 1.5, size 2, 44.052137, -121.41556
 
@@ -51,3 +55,4 @@ geocache = Geocache("Newberry Views", 1.5, 2, 44.052137, -121.41556)
 
 # Print it--also make this print more nicely
 print(geocache)
+print(repr(geocache))
