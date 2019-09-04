@@ -22,3 +22,21 @@ and does the following:
 import sys
 import calendar
 from datetime import datetime
+
+some_args = input("Enter a month and year: ").split(' ')
+print(some_args)
+
+
+def example_calendar(*args):
+    date = datetime.now()
+    if len(args) == 0:
+        print(calendar.monthcalendar(date.year, date.month))
+    elif len(args) == 1:
+        print(calendar.monthcalendar(date.year, int(args[0])))
+    elif len(args) == 2:
+        print(calendar.monthcalendar(int(args[1]), int(args[0])))
+    else:
+        print('Please input with the following format: 14_cal.py month [year]')
+
+
+example_calendar(*some_args)
